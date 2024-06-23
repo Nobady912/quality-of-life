@@ -22,7 +22,7 @@ df = pd.DataFrame(data)
 # Initialize the Dash app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-server = app.server
+server = app.server  # Expose the WSGI server to be used by gunicorn
 app.config.suppress_callback_exceptions = True
 
 app.layout = html.Div([
